@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <!-- 引入初始化文件 -->
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/guanli.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="shortcut icon" href="../static/favicon.ico" />
+    <title>管理员页面</title>
+</head>
+
+<body>
+    <!-- 导航栏开始 -->
+    <section class="shortcut">
+        <div class="w">
+            <div class="fz">
+                <ul>
+                    <li> <img src="../static/favicon.ico" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>图书交易方便你我！&nbsp;&nbsp;</li>
+                    <!-- <li> -->
+                    <!-- <a href="#">请登录&nbsp;</a> -->
+                    <!-- <a href="zhuce.html" class="red">免费注册</a> -->
+                    <!-- </li> -->
+                </ul>
+            </div>
+            <div class="fy">
+                <ul>
+                    <li class="orange">咨询电话：<strong>180 4772 7335</strong>&nbsp;&nbsp;</li>
+                    <li><a href="#" class="orange">管理员登录</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- 导航栏结束 -->
+    <header class="header w">
+        <!-- 搜索模块开始 -->
+        <div class="search">
+            <input type="search" name="" id="" placeholder="java从入门到精通">
+            <button>搜索</button>
+        </div>
+        <!--搜索模块结束  -->
+        <div class="gongneng">
+            <strong><a href="#">我的订单&nbsp;&nbsp;&nbsp;&nbsp;</a></strong>
+            <strong><a href="#">我的收藏&nbsp;&nbsp;&nbsp;&nbsp;</a></br></strong>
+            <strong><a href="#">在线留言&nbsp;&nbsp;&nbsp;&nbsp;</a></strong>
+            <strong><a href="#">发布图书&nbsp;&nbsp;&nbsp;&nbsp;</a></strong>
+        </div>
+    </header>
+    <div class="main">
+        <div class="zb">
+            <ul id="sele">
+                <li class="selected">图书管理</li>
+                <li>用户管理</li>
+            </ul>
+        </div>
+        <div class="yb current" id="bookManage">
+            <h1>&nbsp;&nbsp;图书管理</h1>
+            <div class="biaoge1">
+                <table class="book_biaoge " cellspacing="0" cellpadding="300">
+                     <tr>
+                        <th>编号</th>
+                        <th>书名</th>
+                        <th>金额</th>
+                        <th>发布时间</th>
+                        <th>磨损度</th>
+                        <th>类别</th>
+                        <th>卖家</th>
+                        <th>操作</th>
+                    </tr>
+                    {% for i in book %}
+                        <form method="post" action="/upload/">
+                        <tr>
+                        <td><input name="id" value="{{ i.id }}"></td>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.price }}</td>
+                        <td>{{ i.pub_date }}</td>
+                        <td>{{ i.abradability }}</td>
+                        <td>{{ i.category }}</td>
+                        <td>{{ i.pub_host }}</td>
+                        <td><input type="submit"  value="删除"></td>
+                        </form>
+
+
+                        {% endfor %}
+
+{#                    <tr>#}
+{#                        <td>1</td>#}
+{#                        <td>红楼梦</td>#}
+{#                        <td>35.00</td>#}
+{#                        <td>2020/3/19</td>#}
+{#                        <td>9</td>#}
+{#                        <td>科普</td>#}
+{#                        <td>gaokai1997</td>#}
+{#                        <td><button>删除</button></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>2</td>#}
+{#                        <td>红楼梦</td>#}
+{#                        <td>35.00</td>#}
+{#                        <td>2020/3/19</td>#}
+{#                        <td>9</td>#}
+{#                        <td>科普</td>#}
+{#                        <td>gaokai1997</td>#}
+{#                        <td><button>删除</button></td>#}
+{#                    </tr>#}
+                </table>
+            </div>
+        </div>
+        <div class="yb" id="userManage">
+            <h1>&nbsp;&nbsp;用户管理</h1>
+
+
+            <div class="biaoge2">
+                <table class="user_biaoge " cellspacing="0" cellpadding="300">
+                    <tr>
+                        <th>账号</th>
+                        <th>密码</th>
+                        <th>手机号</th>
+                        <th>注册时间</th>
+                        <th>操作</th>
+                    </tr>
+                    {% for i in users %}
+                        <form method="post" action="/deluser/">
+                        <tr>
+                        <td><input name="username" value="{{ i.username }}"></td>
+                        <td>****</td>
+                        <td>{{ i.mobile }}</td>
+                        <td>{{ i.date_joined }}</td>
+                        <td><input type="submit" value="删除"></td>
+                    </tr>
+                        </form>
+
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <script>
+        // 获取左边选择框的DOM节点
+        var lis = document.querySelectorAll('#sele>li')
+        // 获取右边展示区域的DOM节点
+        var divs = document.querySelectorAll('.yb')
+        // 遍历，为左边选择框添加点击事件
+        for (var i = 0; i < lis.length; i++) {
+            // 添加自定义属性，方便得知点击的是哪个按钮
+            lis[i].setAttribute('index', i)
+            // 添加点击事件
+            lis[i].onclick = function () {
+                // 为左边所有的li删除selected类名
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].classList.remove('selected')
+                }
+                // 为选中的li添加selected类名
+                this.classList.add('selected')
+                // 为右边所有div清除current类名
+                for (var j = 0; j < divs.length; j++) {
+                    divs[j].classList.remove('current')
+                }
+                // 获取前面添加的自定义属性
+                var n = this.getAttribute('index')
+                // 对应的div添加current类名
+                divs[Number(n)].classList.add('current')
+            }
+        }
+
+    </script>
+</body>
+
+</html>

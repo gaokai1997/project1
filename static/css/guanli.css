@@ -1,0 +1,85 @@
+.main{
+    width: 1600px;
+    margin: 0 auto;
+}
+.zb{
+    float: left;
+    margin-top: 20px;
+}
+.zb ul li{
+    background-color:snow;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+/* 为左边选中的li添加类名 */
+.zb .selected{
+    background-color:  rgb(150, 158, 167); 
+}
+.yb{
+    display: none;
+    float: left;
+    margin-top: 20px;
+    height: 600px; 
+    width: 1200px;
+    border: slategray solid 1px;
+}
+
+/* 添加类名，控制右边盒子的显示与隐藏 */
+.current{
+    display: block;
+}
+#bookManage{
+    /* background-color: rosybrown; */
+}
+#bookManage h1{
+    margin: 0 auto;
+    background-color:  rgb(150, 158, 167);
+}
+#userManage h1{
+    margin: 0 auto;
+    background-color:  rgb(150, 158, 167);
+}
+.book_biaoge{
+    border: 1px solid rgb(150, 158, 167);
+    width: 1200px;
+    height: 120px;
+}
+.book_biaoge td,th{
+    border: 1px solid  rgb(150, 158, 167);
+}
+.book_biaoge th{
+    font-weight: 700;
+    font-size: 25px;
+}
+.book_biaoge td{
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+
+.user_biaoge{
+    border: 1px solid rgb(150, 158, 167);
+    width: 1200px;
+    height: 120px;
+}
+.user_biaoge td,th{
+    border: 1px solid  rgb(150, 158, 167);
+}
+.user_biaoge th{
+    font-weight: 700;
+    font-size: 25px;
+}
+.user_biaoge td{
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+
+
+

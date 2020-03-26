@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册账号</title>
+    <link rel="shortcut icon" href="../static/favicon.ico" />
+    <link rel="stylesheet" href="../static/css/base.css">
+    <!-- 引入初始化文件 -->
+    <link rel="stylesheet" href="../static/css/zhuce.css">
+    <!-- 引入jQuery文件 -->
+    <script src="../static/js/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="w">
+        <header>
+            <h1>注册账号</h1>
+        </header>
+        <div class="area">
+            <h3><a href="/index/" class="shang">返回首页</a>
+                <div class="login">
+                    <a href="/login/" class="shang">我有账号，直接登录</a>
+                </div>
+
+                <div class="re_form">
+                    <form action="/register/" method="post">
+                        <ul>
+                            <li>
+                                <label for="username">用户名：</label>
+                                <input type="text" name="username" class="inp" id="username">
+                                <span class="error"></span>
+                            </li>
+                            <li>
+                                <label for="password">密码：</label>
+                                <input type="password" name="password" class="inp" id="password">
+                                <span class=" error"></span>
+                            </li>
+                            <li>
+                                <label for="password2">确认密码：</label>
+                                <input type="password" name="password2" class="inp" id="password2">
+                                <span class="error none" id="pw_error"><i class="error_icon"></i>两次密码不一致</span>
+                                <span class="success none" id="pw_success"><i class="success_icon"></i>密码输入正确</span>
+                            </li>
+                            <li>
+                                <label for="mobile">手机号：</label>
+                                <input type="text" name="mobile" class="inp" id="mobile">
+                                <span class="error none" id="mob_error"><i class="error_icon"></i>手机号格式不正确</span>
+                                <span class="success none" id="mob_success"><i class="success_icon"></i>手机号输入正确</span>
+
+                            </li>
+                            <li class="agree">
+                                <input type="checkbox" name="" id=""> 同意协议并注册
+                                <a href="#">《用户协议》</a>
+                            </li>
+                            <li><input type="submit" value="提交注册" class="bun"></li>
+                        </ul>
+                    </form>
+                </div>
+            </h3>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="w">
+            <div class="banquan">
+                <div class="guanyu">
+                    关于我们 | 联系我们 | 联系客服 | 商家入驻 | 营销中心 | 友情链接 | 销售联盟 |
+                </div>
+                <div class="dizhi">
+                    地址：内蒙古自治区呼和浩特市内蒙古师范大学 邮编：010000 电话：400-618-4000 传真：010-82935100 邮箱: 1243580174@qq.com
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $('#password2').bind('input propertychange', function () {
+            // console.log(1);
+            var pw2 = $('#password2').val();
+            var pw = $('#password').val();
+            if (pw2 === pw) {
+                $('#pw_error').hide()
+                $('#pw_success').show()
+            } else {
+                $('#pw_error').show()
+                $('#pw_success').hide()
+            }
+        })
+        var regtel = /^[1][3|4|5|7|8][0-9]{9}$/;
+        $('#mobile').bind('input propertychange', function () {
+            // console.log(1);
+            if (regtel.test($('#mobile').val())) {
+                $('#mob_error').hide()
+                $('#mob_success').show()
+            } else {
+                $('#mob_error').show()
+                $('#mob_success').hide()
+            }
+        })
+    </script>
+</body>
+
+</html>

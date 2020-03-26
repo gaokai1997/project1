@@ -1,0 +1,158 @@
+/* 字体图标申明 */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+      url('../fonts/icomoon.woff?tomleg') format('woff'),
+      url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+ /* 版心 */
+ .w{
+     width: 1200px;
+     margin: 0 auto;
+ }
+ /* 导航栏开始 */
+ .shortcut{
+    height: 50px;
+    line-height: 50px;
+    border-top:rgb(168, 78, 4) solid 4px;
+	border-bottom:#e4e7ec solid 1px;
+	background:-webkit-linear-gradient(#fff 0%,#f1f3f5 100%);
+	background:linear-gradient(#fff 0%,#f1f3f5 100%);
+ }
+ .fz{
+     float: left;
+ }
+ .fy{
+     float: right;
+ }
+ .shortcut ul li{
+     float: left;
+ }
+ .red{
+     color: rgb(252, 38, 0);
+ }
+ .orange{
+     color: coral;
+ }
+ /* 头部制作开始 */
+ .header{
+     position: relative;
+     height: 90px;
+      background-color: rgb(232, 235, 228);  
+ }
+ .search{
+     position: absolute;
+     left: 200px;
+     top: 25px;
+     width: 570px;
+     height: 40px;
+     border: 2px solid rgb(20, 4, 1) ;
+     border: radius 0px 0px 15px 15px;
+ }
+ .search input{
+     float: left;
+     width: 490px;
+     height: 40px;  
+     padding-left: 5px;  
+ }
+ .search button{
+     float: left;
+     width: 80px;
+     height: 40px;
+     font-size: 18px;
+ }
+ .gongneng{
+     position: absolute;
+     top: 15px;
+     left: 900px;
+     font-size: 20px;
+ }
+ .nav{
+     height:40px ;
+     border-bottom:2px solid rgb(231, 15, 58);
+ }
+ .nav .zdh{
+     float: left;
+     width: 210px;
+     height: 40px;
+     background-color: rgb(231, 15, 58);
+ }
+ .nav .ydh{
+     float: left;
+ }
+ .zdh .dt{
+     width: 100%;
+     height: 100%;
+     color: #fff;
+     text-align: center;
+     line-height: 40px;
+     font-size: 18px;
+ }
+ .zdh .dd{
+     width: 210px;
+     height: 280px;
+     background-color: rgb(231, 15, 70);
+ }
+.zdh .dd ul li{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 2px;
+    margin-left: 2px;
+    padding-left: 30px;
+
+}
+.zdh .dd ul li a{
+    font-size: 14px;
+    color: rgb(232, 235, 228);
+}
+.zdh .dd ul li:hover{
+    background-color: rgb(232, 235, 228);
+}
+.zdh .dd ul li:hover a{
+    color:rgb(231, 15, 70);
+}
+.zdh .dd ul li::after{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    color: rgb(232, 235, 228);
+    font-family: 'icomoon';
+    content: '\e920';
+    font-size: 18px;
+}
+.ydh ul li{
+    float: left;
+}
+.ydh ul li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 40px;
+    font-family: '微软雅黑';
+}
+
+.ydh ul li:hover a{
+    background-color: rgb(232, 235, 228);
+    border-radius:4px;
+}
+/* 底部样式开始 */
+.footer{
+    height: 100px;
+    background-color: #f5f5f5;
+    padding-top: 30px;  
+    margin-top: 100px;
+}
+.banquan{
+    text-align: center;
+}
+.guanyu{
+    margin-bottom: 15px;
+}
+/* 底部样式结束 */

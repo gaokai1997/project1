@@ -1,0 +1,47 @@
+.fabu_main{
+    overflow: hidden;
+    width: 1200px;
+    /* height: 700px; */
+    margin: 0 auto;
+    /* background-color: rgb(241, 239, 239); */
+    margin-top: 30px;
+    border: darkgray solid 1px;
+}
+.fabu_main h1{
+    background-color: rgb(243, 229, 229);
+    margin: 0 auto;
+    color: red;
+    font-size: 30px;
+    text-align: center;
+}
+.text{
+    float: right;
+    width: 600px;
+    /* background-color: cyan; */
+    margin: 30px auto 0;
+    /* border-bottom: darkgray solid 2px; */
+}
+.photo{
+    float: left;
+    height: 300px;
+    width: 300px;
+    border: darkgray solid 1px;
+    margin: 30px 50px;
+}
+.text ul li label{
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 550;
+}
+.text ul li input{
+    width: 300px;
+    height: 40px;
+    border: darkgray solid 1px;
+}
+.text ul li{
+    margin-bottom: 10px;
+}
+
+

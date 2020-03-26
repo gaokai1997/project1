@@ -1,0 +1,70 @@
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+header {
+    height: 84px;
+    border-bottom: 2px solid red;
+}
+header h1{
+    color: red;
+    font-size: 30px;
+    text-align: center;
+}
+.login{
+    width: 500px;
+    height: 300px;
+    background-color: burlywood;
+    margin:  80px auto 0px ;
+    padding-top: 80px;
+}
+
+.login ul li label{
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+.login ul li input{
+    width: 300px;
+    height: 60px;
+    border: 1px solid #cccccc;
+    font-size: 18px;
+}
+.login ul li{
+    margin-bottom: 20px;
+    font-weight: 1000;
+    font-size: 18px;
+}
+.bun{
+    width: 150px;
+    height: 30px;
+    margin: 0 0 0 100px;
+}
+.fanhui a{
+    font-size: 18px;
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+/* 底部样式开始 */
+.footer{
+    height: 100px;
+    background-color: #f5f5f5;
+    padding-top: 30px;  
+    margin-top: 260px; 
+}
+.banquan{
+    text-align: center;
+}
+.guanyu{
+    margin-bottom: 15px;
+}
+/* 底部样式结束 */
