@@ -147,7 +147,7 @@ ul.pagination1 button a:hover:not(.active) {background-color: #ddd;}
             <ul>
                 {% for i in book %}
                 <li>
-                    <img src="{{ static('database_images') }}/{{ i.image }}" alt="" style="width: 210px;height: 150px">
+                    <a href="/xiangqing/?name={{ i.name }}"><img src="{{ static('database_images') }}/{{ i.image }}" alt="" style="width: 210px;height: 150px"></a>
                     <h4>{{  i.name }}</h4>
                     <div class="jiage">
                         {{ i.price }}

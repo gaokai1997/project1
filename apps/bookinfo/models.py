@@ -14,6 +14,7 @@ class libray(models.Model):
     abradability=models.IntegerField(null=True,verbose_name="新旧程度")
     price=models.DecimalField(max_digits=10,decimal_places=2,verbose_name="单价")
     image=models.ImageField(null=True,verbose_name="图片")
+    url=models.CharField(max_length=100,verbose_name="图书路径")
     class Meta:
         db_table = 'tb_librayr'
         verbose_name = '图书'

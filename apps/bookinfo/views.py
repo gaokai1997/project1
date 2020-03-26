@@ -18,6 +18,7 @@ class uploadView(View):
             book=libray.objects.all()
             users=User.objects.all()
             #ｆｉｒｓｔ
+
             for i in users:
                 # print(i)
                 # print(i.date_joined,type(i.date_joined))
@@ -50,3 +51,17 @@ class deluserView(View):
         print(username)
         User.objects.filter(username=username).delete()
         return redirect(reverse("bookinfo:deluser"))
+
+class xqView(View):
+    def get(self,request):
+        name=request.GET.get("name")
+        book=libray.objects.get(name=name)
+        context={
+            "image":book.image,
+            "name":book.name,
+            "auth":book.author,
+            "price":book.price,
+            "date":book.pub_date,
+            "new_old":book.abradability,
+        }
+        return render(request,"xiangqing.html",context=context)
