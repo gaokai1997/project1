@@ -17,6 +17,7 @@ class uploadView(View):
         if request.user.is_superuser:
             book=libray.objects.all()
             users=User.objects.all()
+            #ｆｉｒｓｔ
             for i in users:
                 # print(i)
                 # print(i.date_joined,type(i.date_joined))
