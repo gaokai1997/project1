@@ -83,8 +83,11 @@ ul.pagination1 button a:hover:not(.active) {background-color: #ddd;}
     <header class="header w">
         <!-- 搜索模块开始 -->
         <div class="search">
-            <input type="search" name="" id="" placeholder="java从入门到精通">
-            <button>搜索</button>
+            <form method="get" action="/xiangqing/" >
+                 <input type="search" name="name"  placeholder="java从入门到精通">
+                <button type="submit">搜索</button>
+{#                 <input type="submit" value="">#}
+            </form>
         </div>
         <!--搜索模块结束  -->
         <div class="gongneng">

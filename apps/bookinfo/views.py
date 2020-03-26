@@ -55,7 +55,11 @@ class deluserView(View):
 class xqView(View):
     def get(self,request):
         name=request.GET.get("name")
-        book=libray.objects.get(name=name)
+        try:
+            book=libray.objects.get(name=name)
+        except:
+            return render(request,"404.html")
+
         context={
             "image":book.image,
             "name":book.name,
